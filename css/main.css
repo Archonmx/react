@@ -1,0 +1,113 @@
+body {
+    background-color: #f5f5f5;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.empty-message {
+    font-size: 14px;
+    color: #8993ad;
+}
+
+.business-list {
+    padding-top: 65px;
+    float: left;
+    margin-right: 20px;
+    width: 490px;
+}
+
+.business-list__header {
+    margin-bottom: 30px;
+}
+
+.business {
+    background-color: white;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.business__header {
+    padding-bottom: 20px;
+}
+
+.business__name {
+    padding: 0px 10px;
+}
+
+.business__remove-button {
+    float: left;
+    border: 0px;
+    width: 10px;
+    height: 10px;
+    background: url('../img/clear-button.png') no-repeat center;
+    background-size: contain;
+}
+
+.business__toggle-show-button {
+    float: right;
+    border: 0px;
+    width: 8px;
+    height: 8px;
+    background: url('../img/arrow.png') no-repeat center;
+    background-size: contain;
+    margin-right: 40px;
+}
+
+.business__description {
+    padding: 10px 40px;
+    padding-bottom: 40px;
+    margin-bottom: 35px;
+    border-top: 1px solid #f7f7f7;
+}
+
+.form-business {
+    padding-top: 65px;
+    float: left;
+    width: 490px;
+}
+
+.form-business__header {
+    margin-bottom: 30px;
+}
+
+.form-business__body {
+    background-color: white;
+    padding: 30px 40px;
+}
+
+.form-business__input-name {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    padding: 16px 14px;
+    border: 1px solid #ebebeb;
+    background-color: #f9f9f9;
+    font: bold 15px Arial;
+}
+
+.form-business__input-description {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    padding: 16px 14px;
+    border: 1px solid #ebebeb;
+    background-color: #f9f9f9;
+    font: bold 15px Arial;
+}
+
+.form-business__button-add {
+    border: 0px;
+    color: white;
+    background-color: #2174fd;
+    width: 225px;
+    height: 55px;
+    margin-bottom: 25px;
+}
+
+.done {
+    text-decoration: line-through;
+}
