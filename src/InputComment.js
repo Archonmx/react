@@ -2,14 +2,14 @@ import React from 'react'
 
 export default (props) => {
     return (
-        <form onSubmit={props.add}>
-            <label>Имя
+        <form
+            className={styles.inputForm}
+            onSubmit={props.add}>
+            <label>Имя</label>
             <input type="text" name="name" value={props.name} onChange={props.inputChange}/>
-            </label>
-            <label>Комментарий
+            <label>Комментарий</label>
             <input type="textarea" name="text" value={props.text} onChange={props.inputChange}/>
-            </label>
-            <button>Добавить</button>
+            <button className={styles.test}>Добавить</button>
         </form>
     )
 }
