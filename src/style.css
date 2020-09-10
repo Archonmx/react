@@ -1,4 +1,8 @@
-.inputForm {
+form {
     display: flex;
     flex-direction: column;
+}
+
+.send {
+    width: 100px;
 }

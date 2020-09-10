@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Comment from "./Comment.js";
 import InputComment from "./InputComment";
-import styles from "./styles.css";
+import "./style.css";
 
 const COMMENTS = "comments";
 
