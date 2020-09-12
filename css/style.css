@@ -51,12 +51,6 @@ h1, h2, h3, p {
     overflow: hidden;
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .fixed-container {
     width: 1000px;
     margin: 0 auto;

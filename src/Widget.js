@@ -57,7 +57,8 @@ class Widget extends React.Component {
         this.save();
 
         return (
-            <div className={styles.inputForm}>
+            <div className={"fixed-container main"}>
+                <div className={"comments"}>
                 {this.state.comments.map((comment, index) => {
                     return <Comment
                         key={index}
@@ -67,6 +68,7 @@ class Widget extends React.Component {
                         delete={this.deleteComment.bind(this, index)}
                     />
                 })}
+                </div>
                 <InputComment
                     name={this.state.name}
                     text={this.state.text}

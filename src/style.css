@@ -1,8 +1,56 @@
-form {
+form fieldset {
     display: flex;
     flex-direction: column;
 }
 
+form fieldset > * {
+    margin: 5px;
+}
+
+.comment {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.comment * {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.comment__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-head__right {
+    display: flex;
+}
+
+
+
+.comments {
+    margin-bottom: 30px;
+}
+
+.input {
+    background-color: white;
+}
+
 .send {
     width: 100px;
+}
+
+.time {
+    font-size: 12px;
+    text-align: right;
+}
+
+.red-cross {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_X.svg");
+    cursor:pointer;
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+    border: none;
 }
