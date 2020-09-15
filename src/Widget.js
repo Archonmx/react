@@ -24,10 +24,7 @@ function Widget() {
     }
 
     function deleteComment(index) {
-        const tmp = comments.concat();
-        tmp.splice(index, 1)
-        console.log(tmp)
-        setComments(tmp);
+        setComments([...comments].filter((_, i) => i !== index));
     }
 
     const addComment = (event) => {
@@ -37,9 +34,7 @@ function Widget() {
             text: text,
             timestamp: new Date().toLocaleString()
         }
-        const tmp = comments.concat();
-        tmp.push(comment);
-        setComments(tmp);
+        setComments([...comments, comment]);
 
         setName("");
         setText("");
