@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState, useMemo} from 'react'
 import ReactDOM from 'react-dom'
-import Comment from "./Comment.js";
 import InputComment from "./InputComment";
 import "./style.css";
+import Comments from "./Comments";
 
 const COMMENTS = "comments";
 
@@ -58,17 +58,11 @@ class Widget extends React.Component {
 
         return (
             <div className={"fixed-container main"}>
-                <div className={"comments"}>
-                {this.state.comments.map((comment, index) => {
-                    return <Comment
-                        key={index}
-                        author={comment.author}
-                        text={comment.text}
-                        timestamp={comment.timestamp}
-                        delete={this.deleteComment.bind(this, index)}
-                    />
-                })}
-                </div>
+                <Comments
+                    comments={this.state.comments}
+                    delete={this.deleteComment}
+                    self={this}
+                />
                 <InputComment
                     name={this.state.name}
                     text={this.state.text}

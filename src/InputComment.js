@@ -8,7 +8,7 @@ export default (props) => {
                 <label>Имя</label>
                 <input type="text" name="name" value={props.name} onChange={props.inputChange}/>
                 <label>Комментарий</label>
-                <textarea rows="10" cols="45" name="text" value={props.text} onChange={props.inputChange}/>
+                <textarea rows="5" cols="45" name="text" value={props.text} onChange={props.inputChange}/>
                 <button className={"send"}>Отправить</button>
             </fieldset>
         </form>
