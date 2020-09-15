@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react'
+import React, {useState, useEffect, useMemo} from 'react'
 import ReactDOM from 'react-dom'
 import InputComment from "./InputComment";
 import "./style.css";
@@ -6,72 +6,62 @@ import Comments from "./Comments";
 
 const COMMENTS = "comments";
 
-class Widget extends React.Component {
-    constructor(props) {
-        super(props);
+function Widget() {
+    const [name, setName] = useState("");
+    const [text, setText] = useState("");
+    const [comments, setComments] = useState(load());
 
-        this.state = {
-            comments: this.load(),
-            name: "",
-            text: ""
-        }
+    useEffect(() => {
+        save()
+    }, [comments])
+
+    function save() {
+        localStorage.setItem(COMMENTS, JSON.stringify(comments))
     }
 
-    load() {
+    function load() {
         return JSON.parse(localStorage.getItem(COMMENTS)) || []
     }
 
-    save() {
-        localStorage.setItem(COMMENTS, JSON.stringify(this.state.comments))
+    function deleteComment(index) {
+        const tmp = comments.concat();
+        tmp.splice(index, 1)
+        console.log(tmp)
+        setComments(tmp);
     }
 
-    deleteComment(index) {
-        let comments = this.state.comments.concat();
-        comments.splice(index, 1)
-        this.setState({comments})
-    }
-
-    inputChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-    addComment = (event) => {
+    const addComment = (event) => {
         event.preventDefault()
         const comment = {
-            author: this.state.name,
-            text: this.state.text,
+            author: name,
+            text: text,
             timestamp: new Date().toLocaleString()
         }
-        let comments = this.state.comments.concat();
-        comments.push(comment);
-        this.setState({
-            comments: comments,
-            name: "",
-            text: ""
-        })
+        const tmp = comments.concat();
+        tmp.push(comment);
+        setComments(tmp);
+
+        setName("");
+        setText("");
     }
 
-    render() {
-        this.save();
+    return (
+        <div className="fixed-container main">
+            <Comments
+                comments={comments}
+                delete={deleteComment}
+                self={this}
+            />
+            <InputComment
+                name={name}
+                text={text}
+                setName={setName}
+                setText={setText}
+                add={addComment}
+            />
+        </div>
+    )
 
-        return (
-            <div className={"fixed-container main"}>
-                <Comments
-                    comments={this.state.comments}
-                    delete={this.deleteComment}
-                    self={this}
-                />
-                <InputComment
-                    name={this.state.name}
-                    text={this.state.text}
-                    inputChange={this.inputChange}
-                    add={this.addComment}
-                />
-            </div>
-        )
-    }
 }
 
 ReactDOM.render(

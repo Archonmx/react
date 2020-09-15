@@ -5,9 +5,9 @@ export default (props) => {
         <div className="comment">
             <div className="comment__head">
                 <div>{props.author}</div>
-                <div className={"comment-head__right"}>
-                    <div className={"time"}>{props.timestamp}</div>
-                    <input type="send" className={"red-cross"} onClick={props.delete}/>
+                <div className="comment-head__right">
+                    <div className="time">{props.timestamp}</div>
+                    <input type="send" className="red-cross" onClick={props.delete}/>
                 </div>
             </div>
             <div>{props.text}</div>
