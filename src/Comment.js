@@ -7,7 +7,7 @@ export default (props) => {
                 <div>{props.author}</div>
                 <div className="comment-head__right">
                     <div className="time">{props.timestamp}</div>
-                    <input type="send" className="red-cross" onClick={props.delete}/>
+                    <input type="send" className="red-cross" onClick={() => props.delete(props.id)}/>
                 </div>
             </div>
             <div>{props.text}</div>

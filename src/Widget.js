@@ -45,7 +45,6 @@ function Widget() {
             <Comments
                 comments={comments}
                 delete={deleteComment}
-                self={this}
             />
             <InputComment
                 name={name}
